@@ -1,33 +1,39 @@
 // Container devices
-$container-xl: 1440px;
-$container-lg: 1140px;
-$container-md: 960px;
-$container-sm: 540px;
+$container-xxl: 1440px;
+$container-xl: 1140px;
+$container-lg: 960px;
+$container-md: 768px;
+$container-sm: 576px;
 
 // Mixins of media query
 @mixin responsive($device) {
-  @if $device == xl {
+  @if $device == xxl {
     // For resolutions higher than 1440px
-    @media screen and (min-width: $container-xl) {
+    @media screen and (min-width: $container-xxl) {
+      @content;
+    }
+  } @else if $device == xl {
+    // For resolutions between 1140px and 1440px
+    @media screen and (max-width: $container-xxl) and (min-width: $container-xl) {
       @content;
     }
   } @else if $device == lg {
-    // For resolutions between 1140px and 1440px
+    // For resolutions between 960px and 1140px
     @media screen and (max-width: $container-xl) and (min-width: $container-lg) {
       @content;
     }
   } @else if $device == md {
-    // For resolutions between 960px and 1140px
+    // For resolutions between 768px and 960px
     @media screen and (max-width: $container-lg) and (min-width: $container-md) {
       @content;
     }
   } @else if $device == sm {
-    // For resolutions lower than 960px
+    // For resolutions lower than 768px
     @media screen and (max-width: $container-md) {
       @content;
     }
   } @else if $device == xs {
-    // For resolutions lower than 540px
+    // For resolutions lower than 576px
     @media screen and (max-width: $container-sm) {
       @content;
     }

@@ -1,7 +1,7 @@
 // Typography of project
 
 @mixin typeface-1($size, $device: desktop) {
-  font-family: 'Work Sans', sans-serif;
+  font-family: 'Ubuntu', sans-serif;
 
   // H1
   @if $size == h1 and $device == desktop {
@@ -49,7 +49,7 @@
 }
 
 @mixin typeface-2($size: p2, $device: desktop) {
-  font-family: 'Work Sans', sans-serif;
+  font-family: 'Rubik', sans-serif;
 
   // P1
   @if $size == p1 and $device == desktop {
